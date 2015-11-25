@@ -8,7 +8,8 @@
 
 import UIKit
 import CoreData
-import SlideMenuControllerSwift
+import ChameleonFramework
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,7 +19,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        Chameleon.setGlobalThemeUsingPrimaryColor(UIColor.purpleColor().flatten(), withContentStyle: UIContentStyle.Contrast)
         
+        let font : UIFont = UIFont(name: "HelveticaNeue-Thin", size: 40)! // Font for navigation title
+        // possibly switch font's
+        let shadow : NSShadow = NSShadow()
+        shadow.shadowColor = UIColor.clearColor()
+        shadow.shadowOffset = CGSizeMake(0.0, 4.0)
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor(), NSFontAttributeName : font, NSShadowAttributeName: shadow]
+        
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        /*
+        FBShimmeringView *shimmeringView = [[FBShimmeringView alloc] initWithFrame:self.view.bounds];
+        [self.view addSubview:shimmeringView];
+        
+        UILabel *loadingLabel = [[UILabel alloc] initWithFrame:shimmeringView.bounds];
+        loadingLabel.textAlignment = NSTextAlignmentCenter;
+        loadingLabel.text = NSLocalizedString(@"Shimmer", nil);
+        shimmeringView.contentView = loadingLabel;
+        
+        // Start shimmering.
+        shimmeringView.shimmering = YES;
+        
+        let shimmerView: FBShimmerin
+        */
         return true
     }
 
