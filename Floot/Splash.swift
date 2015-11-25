@@ -23,7 +23,7 @@ class Splash: UIViewController {
         
         let label: UILabel = UILabel()
         
-        let title: NSAttributedString = "Floot".toAttributedString(font: UIFont(name: "HelveticaNeue-Light", size: 40), kerning: 1.3, color: UIColor.whiteColor().flatten())
+        let title: NSAttributedString = "Floot".toAttributedString(font: UIFont(name: "HelveticaNeue-Light", size: 40), kerning: 0.8, color: UIColor.whiteColor().flatten())
         label.attributedText = title
         
         label.sizeToFit()
@@ -44,7 +44,6 @@ class Splash: UIViewController {
     }
     
     func switchForm(sender: UISegmentedControl) {
-        print("Value changed: \(sender.selectedSegmentIndex)")
         if sender.selectedSegmentIndex == 0 {
             self.username.alpha = 1.0
         } else {

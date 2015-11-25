@@ -1,5 +1,5 @@
 //
-//  FUser.swift
+//  FlootUser.swift
 //  Floot
 //
 //  Created by Jamone Alexander Kelly on 11/22/15.
@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+class FlootUser {
+    var userID: Int
+    var username: String
+    var email: String
+}
